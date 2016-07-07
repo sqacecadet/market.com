@@ -1,0 +1,14 @@
+<%= simple_form_for @partner, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@partner[:name]) %>
+  <%= f.input :price %>
+  <%= error_span(@partner[:price]) %>
+  <%= f.input :TypePartner_id %>
+  <%= error_span(@partner[:TypePartner_id]) %>
+  <%= f.input :documents_id %>
+  <%= error_span(@partner[:documents_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                partners_path, :class => 'btn btn-default' %>
+<% end %>

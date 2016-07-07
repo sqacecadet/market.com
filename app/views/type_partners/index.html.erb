@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Type Partners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Documents</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @type_partners.each do |type_partner| %>
+      <tr>
+        <td><%= type_partner.type %></td>
+        <td><%= type_partner.description %></td>
+        <td><%= type_partner.documents %></td>
+        <td><%= link_to 'Show', type_partner %></td>
+        <td><%= link_to 'Edit', edit_type_partner_path(type_partner) %></td>
+        <td><%= link_to 'Destroy', type_partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Type Partner', new_type_partner_path %>
