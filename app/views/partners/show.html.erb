@@ -1,24 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Partner -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @partner.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @partner.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @partner.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:TypePartner_id) %>:</strong></dt>
+  <dd><%= @partner.TypePartner_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:documents_id) %>:</strong></dt>
+  <dd><%= @partner.documents_id %></dd>
+</dl>
 
-<p>
-  <strong>Price:</strong>
-  <%= @partner.price %>
-</p>
-
-<p>
-  <strong>Typepartner:</strong>
-  <%= @partner.TypePartner %>
-</p>
-
-<p>
-  <strong>Documents:</strong>
-  <%= @partner.documents %>
-</p>
-
-<%= link_to 'Edit', edit_partner_path(@partner) %> |
-<%= link_to 'Back', partners_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              partners_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_partner_path(@partner), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              partner_path(@partner),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

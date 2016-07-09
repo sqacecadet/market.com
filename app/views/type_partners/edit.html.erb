@@ -1,6 +1,5 @@
-<h1>Editing Type Partner</h1>
-
-<%= render 'form', type_partner: @type_partner %>
-
-<%= link_to 'Show', @type_partner %> |
-<%= link_to 'Back', type_partners_path %>
+<%- model_class = TypePartner -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

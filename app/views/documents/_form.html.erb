@@ -1,8 +1,7 @@
 <%= simple_form_for @document, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :type %>
-  <%= error_span(@document[:type]) %>
+
   <%= f.input :description %>
-  <%= error_span(@document[:description]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

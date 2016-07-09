@@ -69,6 +69,6 @@ class TypePartnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def type_partner_params
-      params.require(:type_partner).permit(:type, :description, :documents_id)
+      params.require(:type_partner).permit(:type, :description)
     end
 end
